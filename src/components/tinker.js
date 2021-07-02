@@ -26,18 +26,15 @@ export default function Tinker() {
 
   useEffect(() => {
     socket.on("FromAPI", (data) => {
-      console.log(data);
       setResponse(data);
     });
   }, []);
 
   const disconnect = () => {
-    console.log("disconnect");
     socket.disconnect();
     setResponse(null);
   };
   const connect = () => {
-    console.log("connect");
     socket.connect();
   };
 
